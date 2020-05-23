@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html>
+<title>N.S Polytechnic</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  box-sizing: border-box;
+}
+
+body{
+  background: #f9f9f9;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.main-title{
+  color: #2d2d2d;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.7em 0;
+}
+
+.container{
+  padding: 1em 0;
+  float: left;
+  width: 50%;
+}
+@media screen and (max-width: 640px){
+  .container{
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px){
+  .container{
+    width: 33.33333%;
+  }
+}
+
+.container .title{
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image{
+  width: 100%;
+  height:200px;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3{
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.content-details p{
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.fadeIn-bottom{
+  top: 80%;
+}
+
+.fadeIn-top{
+  top: 20%;
+}
+
+.fadeIn-left{
+  left: 20%;
+}
+
+.fadeIn-right{
+  left: 80%;
+}
+</style>
+
+<style>
+#cover {
+  position: relative;
+  color: white;
+}
+
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: -5.0%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+/* qlinks */
+.qlinks{
+position: absolute;
+  top: 13.5%;
+  left: 17%;
+  transform: translate(-50%, -50%);
+  
+  
+  
+}
+.qlinkbtn{
+  border: 2px solid black;
+  background-color: transparent;
+  color: #2196F3;
+  padding: 9px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* button style of covervid */
+.btn {
+  border: 2px solid black;
+  background-color: transparent;
+  background-color:#235345;
+  color: black;
+  padding: 9px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+/* Blue */
+.info {
+  border-color: #2196F3;
+  /*color: dodgerblue */
+  color:#2196F3;
+  font-weight:bold;
+  font-family:sen-sarif;
+  font-size:1em;
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+
+form {
+  position: relative;
+  width: 250px;
+  margin: 0 auto;
+  background: rgba(130,130,130,.3);
+  background: transparent;
+  padding: 15px 18px;
+  border: 1px solid;
+  border-top-color: rgba(255,255,255,.4);
+  border-left-color: rgba(255,255,255,.4);
+  border-bottom-color: rgba(60,60,60,.4);
+  border-right-color: rgba(60,60,60,.4);
+  border-color: black;
+  opacity:0.8;
+}
+form:hover {
+ 
+  color: white;
+
+}
+form input, form button {
+  width: 212px;
+  border: 1px solid;
+  border-bottom-color: rgba(255,255,255,.5);
+  border-right-color: rgba(60,60,60,.35);
+  border-top-color: rgba(60,60,60,.35);
+  border-left-color: rgba(80,80,80,.45);
+  background-color: rgba(0,0,0,.2);
+
+  background-repeat: no-repeat;
+  padding: 8px 24px 8px 10px;
+  font: bold .875em/1.25em "Open Sans Condensed", sans-serif;
+  letter-spacing: .075em;
+  /* color: #fff; */
+  color:#2196F3;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  margin-bottom: 19px;
+  border-color: #2196F3;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+ 
+}
+form input:focus { background-color: rgba(0,0,0,.4); }
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 10px 5px;
+  border: none;
+  display: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 45px;
+  right: 28px;
+  width: 80px;
+}
+
+.top-items{
+display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items:center;
+
+}
+.helpline{
+display: flex;
+ flex-wrap: collumn wrap;
+  justify-content: space-between;
+  align-items:center;
+  background-color:lightblue;
+  
+}
+
+
+
+</style>
+
+
+
+<script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiM2N2MxOGUiLCJ3ZWIiOnsiYm90SWQiOiI1ZWM4NmZlZjI4YTIzYjAwYWI2MGFlNDMiLCJ0aGVtZSI6IiM2N2MxOGUifSwid2VsY29tZVRleHQiOiJDaGF0IE5vdyJ9" async defer></script>
+<!--engati bot-->
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body id="myPage">
+
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="templates/hostel.html" class="w3-bar-item w3-button">Hostel</a>
+  <a href="templates/Library.html" class="w3-bar-item w3-button">Library</a>
+  <a href="templates/more.html" class="w3-bar-item w3-button">View More </a>
+ 
+</nav>
+
+<!-- Navbar -->
+<div class="top-items" style="margin-top: 2.5%;width:70%">
+  <img src="logo.jpg" alt="logo"  style="height: 100px;">
+   <div class="helpnine" ><h4>For Admission Call</h4>
+    <p>+91-7026177733</p>
+	
+  </div>
+  <div class="top-items " > 
+  <span class="fa-stack fa-2x">
+    <i class="fa fa fa-ban fa-stack-2x"  style="color:red;"></i>
+      <span class="fa fa-stack-1x" style="color:black;">
+          <span style="font-size:20px; margin-top:-4px;margin-left:-5px; display:block;font-weight:bold" >
+              Ragging
+          </span>
+		 
+    </span>
+</span>	
+  </div>
+ 
+  </div>
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+  <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About Us</a>
+  <a href="#courses" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Courses</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+    <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Alumuni</a>
+  <a href="#placement" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Placements</a>
+  <a href="#gallary" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Gallary</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+    <!-- <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>      -->
+    <!-- <div class="w3-dropdown-content w3-card-4 w3-bar-block"> -->
+      <!-- <a href="#" class="w3-bar-item w3-button">Link</a> -->
+      <!-- <a href="#" class="w3-bar-item w3-button">Link</a> -->
+      <!-- <a href="#" class="w3-bar-item w3-button">Link</a> -->
+    <!-- </div> -->
+  </div>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#" class="w3-bar-item w3-button">home</a>
+    <a href="#about" class="w3-bar-item w3-button">About Us</a>
+    <a href="#courses" class="w3-bar-item w3-button">Courses</a>
+    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+	 <a href="#team" class="w3-bar-item w3-button">team</a>
+	 <a href="#placement" class="w3-bar-item w3-button">Placements</a>
+	  <a href="#gallary" class="w3-bar-item w3-button">Gallary</a>
+    <!-- <a href="#" class="w3-bar-item w3-button">Search</a> -->
+  </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity"  id="cover">
+  <!-- <img src="/w3images/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;"> -->
+  <video  muted loop autoplay id="myVideo" alt="boat" style="width:100%;min-height:350px;max-height:759px;">
+    <source src="videocover2.mp4" type="video/mp4">
+  </video>
+  <!-- quick links notice -->
+  <div class="qlinks" >
+    <!-- <img src="logo.jpg" alt="Boss"  > -->
+	   <!-- <button class="qlinkbtn">Photo GalLary</button> -->
+		  </div>
+  <div class="centered" style="margin-top:5%">
+  <!-- <a href="#!home" class="btn info" >help line for admission</a> -->
+   <button class="open-button" onclick="openForm()" id="myButton">Apply Online</button>
+  <div class="form-popup" id="myForm">
+ 
+      <!-- <form onsubmit="return postToGoogle();" action="" target="_self" id="form"  >  -->
+	  
+	     <!-- <label for="" style="font-weight:bold;color:black; text-transform: uppercase;">admission enquiry</label>  -->
+		 <!-- </br>  -->
+	     <!-- <label for="" style="color:black;font-weight:bold"></label>  -->
+  <!-- <input type="text" name="entry.654923010" id="name" placeholder="name" class="quantumWizTextinputPaperinputInput exportInput" style="color:#2196f3;">  -->
+    
+  <!-- <label for="" style="color:black;font-weight:bold"></label>  -->
+   <!-- <input type="text" name="entry.432187410" id="email" placeholder="email" class="quantumWizTextinputPaperinputInput exportInput" style="color:#2196f3;">  -->
+    
+   <!-- <label for="" style="color:black;font-weight:bold"></label>  -->
+  <!-- <input type="number" name="entry.871270343" id="mobile" placeholder="phone number" class="pass" >  -->
+    
+   <!-- <button type="submit"  value="submit"style="color:skyblue">submit</button>   -->
+  <!-- <div class="flex-container"> <a href="#!home" class="btn info" style="float:left" type="submit" value="submit">Submit</a>   <a href="#!home" class="btn info" onclick="closeForm()" >Close</a> </div> -->
+     <!-- </form>  -->
+	 
+	   <form id="form" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off"> 
+	   <label for="" style="font-weight:bold;color:black; text-transform: uppercase;">admission enquiry</label> 
+<input id="nameField" name="entry.654923010" placeholder="Enter your name" type="text" required> 
+<input id="emailField" name="entry.432187410" placeholder="Enter your email" type="email" required> 
+<input id="mobField" name="entry.871270343" placeholder="Enter your Phone Number" type="text" pattern="^\d{10}$" required>  
+<!-- <select id="cinema" name="entry.1878256062" placeholder="Select Cinema" required> -->
+<!-- <option value="">Select Courses?</option> -->
+<!-- <option value="City: Delhi, Cinema: PVR Logix City Centre IMAX, Noida">Time Saving Fast Track Tutorials</option> -->
+<!-- <option value="City:Bengaluru  Cinema:Cinepolis IMAX Forum Shantiniketan">Provide Code for reference</option> -->
+<!-- <option value="City:Chennai Cinema:SPI Palazo The Forum Vijaya Mall, Vadapalani">Instant Replies of Comments</option> -->
+<!-- <option value="City:Pune Cinema:Cinepolis Westend Mall, Pune">Latest Code Updates</option>  -->
+<!-- </select>  -->
+<button id="send" type="submit" class="common_btn">Register Now</button><a href="#!home" class="btn info" onclick="closeForm()" >Close</a> 
+</form>
+
+	 </div> 
+	 <h3 id="success-msg" style="text-align: center !important; margin-top:190px !important; display:none; color:#fff"> Your Request has been posted to us.</h3>
+  </div>
+  <!-- <div class="w3-container w3-display-bottomleft w3-margin-bottom">   -->
+    <!-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">LEARN W3.CSS</button> -->
+  <!-- </div> -->
+</div>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-teal w3-display-container"> 
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+      <h4>Oh snap! We just showed you a modal..</h4>
+      <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+    </header>
+    <div class="w3-container">
+      <p>Cool huh? Ok, enough teasing around..</p>
+      <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
+    </div>
+    <footer class="w3-container w3-teal">
+      <p>Modal footer</p>
+    </footer>
+  </div>
+</div>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+<div class="w3-row">
+<h2>Our Faculty</h2>
+<p>Meet our eminent faculty members - keeps the growth going:</p>
+</br>
+<div class="w3-row" style="margin-left:18%">
+<div class="w3-quarter">
+  <img src="media/img/team/SAPTARSHI MRIDDHA.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>SAPTARSHI MRIDDHAY</h3>
+  <p>ELECTRICAL ENGINEERING (HOD)</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="media/img/team/SUBRATA MONDAL.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>SUBRATA MONDAL</h3>
+  <p>PRINCIPAL</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="media/img/team/SUSANTA MONDAL.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>SUSANTA MONDAL</h3>
+  <p>MECHANICAL ENGINEERING (HOD)</p>
+</div>
+</div>
+<div class="w3-row"><br>
+
+
+
+<div class="w3-quarter">
+  <img src="media/img/team/JANADAR MAHATO.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>JANADAR MAHATO</h3>
+  <p>GENERAL DEPARTMENT (HOD)</p>
+</div>
+
+<div class="w3-quarter"  >
+  <img src="media/img/team/BIKASH MONDAL.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>BIKASH MONDAL</h3>
+  <p>OFFICER IN CHARGE</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="media/img/team/MITAN DAS.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>MITAN DAS</h3>
+  <p>CIVIL ENGINEERING - SE (HOD)
+</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="media/img/team/PRITAM DEY.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>PRITAM DEY</h3>
+  <p>CIVIL ENGINEERING -(HOD)</p>
+  
+</div>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="about">
+
+<div class="w3-quarter">
+<h2>About Us</h2>
+<p>NS Polytechnic College is situated in Burdwan in West Bengal state of India. it is accredited from AICTE, NAAC Hostel facility is available for its students. Additional campus facilities such as Canteen, Computer Lab, Gym, Library, Cls. Room, Sports, Trans., WiFi, Hostel are also there.</p>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="infrast.jpg" alt="Snow" style="width:100%">
+  <div class="w3-container">
+  <h3>Infrastruture</h3>
+  <!-- <h4>Trade</h4> -->
+  <!-- <p>Blablabla</p> -->
+  <!-- <p>Blablabla</p> -->
+  <!-- <p>Blablabla</p> -->
+  <!-- <p>Blablabla</p> -->
+  </div>
+  </div>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="class.jpg" alt="Lights" style="width:100%">
+  <div class="w3-container">
+  <h3>Classroom</h3>
+  <!-- <h4>Trade</h4> -->
+  <!-- <p>Blablabla</p> -->
+  <!-- <p>Blablabla</p> -->
+  <!-- <p>Blablabla</p> -->
+  <!-- <p>Blablabla</p> -->
+  </div>
+  </div>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="library.jpg" alt="Mountains" style="width:100%">
+  <div class="w3-container">
+  <h3>Library</h3>
+  <!-- <h4>Trade</h4> -->
+  <!-- <p>Blablabla</p> -->
+  <!-- <p>Blablabla</p> -->
+  <!-- <p>Blablabla</p> -->
+  <!-- <p>Blablabla</p> -->
+  </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Container -->
+<div class="w3-container" style="position:relative">
+  <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
+  style="position:absolute;top:-28px;right:24px">+</a>
+</div>
+
+<!-- Pricing Row -->
+<div class="w3-row-padding w3-center w3-padding-64" id="courses">
+    <h2>Our Courses</h2>
+    <p>Choose a Couse.</p><br>
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Deploma in Mechanical Engineering</p>
+        </li>
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"> -->
+          <!-- <h2 class="w3-wide"><i class="fa fa-usd"></i> xxxxxxxx</h2> -->
+          <!-- <span class="w3-opacity">xxxxxxxx</span> -->
+        <!-- </li> -->
+        <li class="w3-theme-l5 w3-padding-24">
+          <!-- <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button> -->
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme-l2">
+          <p class="w3-xlarge">Deploma in Electricall Engineering</p>
+        </li>
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"> -->
+          <!-- <h2 class="w3-wide"><i class="fa fa-usd"></i> xxxxxxxx</h2> -->
+          <!-- <span class="w3-opacity">xxxxxxxx</span> -->
+        <!-- </li> -->
+        <li class="w3-theme-l5 w3-padding-24">
+          <!-- <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button> -->
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge" style="padding-bottom:9.5%">Deploma in Civil Engineering &nbsp;&nbsp;&nbsp;    </p>
+		  
+        </li>
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"> -->
+          <!-- <h2 class="w3-wide"><i class="fa fa-usd"></i> xxxxxxxx</h2> -->
+          <!-- <span class="w3-opacity">xxxxxxxx</span> -->
+        <!-- </li> -->
+        <li class="w3-theme-l5 w3-padding-24">
+          <!-- <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button> -->
+        </li>
+      </ul>
+    </div>
+	
+	
+	
+    <div class="w3-third w3-margin-bottom" style="margin-left:33.3%">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge" >Deploma in Survey Engineering &nbsp;&nbsp;&nbsp;    </p>
+		  
+        </li>
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"><b>xxxxxxxx</b> xxxxxxxx</li> -->
+        <!-- <li class="w3-padding-16"> -->
+          <!-- <h2 class="w3-wide"><i class="fa fa-usd"></i> xxxxxxxx</h2> -->
+          <!-- <span class="w3-opacity">xxxxxxxx xxxxxxxx</span> -->
+        <!-- </li> -->
+        <li class="w3-theme-l5 w3-padding-24">
+          <!-- <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button> -->
+        </li>
+      </ul>
+    </div>
+</div>
+
+
+<!-- Image gallary -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="gallary">
+  <div class="w3-row">
+<h1 class="main-title w3-theme-l2" >Our Campus - Gallary</h1>
+
+<div class="container">
+  <!-- <h3 class="title">Text fadeIn bottom</h3> -->
+  <div class="content">
+    <!-- <a href="" target="_blank"> -->
+      <div class="content-overlay"></div>
+      <img class="content-image" src="media/img/gallary/1.jpg">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">Shreya Ghosal</h3>
+        <p class="content-text">At our cultural Fest</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <!-- <h3 class="title">Text fadeIn top</h3> -->
+  <div class="content">
+    <a href="" target="_blank">
+      <div class="content-overlay"></div>
+      <img class="content-image" src="media/img/gallary/2.jpg">
+      <div class="content-details fadeIn-top">
+        <h3>Rupam Islam</h3>
+        <p>At our cultural Fest</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <!-- <h3 class="title">Text fadeIn left</h3> -->
+  <div class="content">
+    <a href="" target="_blank">
+      <div class="content-overlay"></div>
+      <img class="content-image" src="media/img/gallary/3.jpg">
+      <div class="content-details fadeIn-left">
+        <h3>Awards</h3>
+        <p>At Awards Distribution ceremony</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <!-- <h3 class="title">Text fadeIn right</h3> -->
+  <div class="content">
+    <a href="" target="_blank">
+      <div class="content-overlay"></div>
+      <img class="content-image" src="media/img/gallary/4.jpg">
+      <div class="content-details fadeIn-right">
+        <h3>Moments of enthusiasm</h3>
+        <p>Our students</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <!-- <h3 class="title">Text fadeIn top left</h3> -->
+  <div class="content">
+    <a href="" target="_blank">
+      <div class="content-overlay"></div>
+      <img class="content-image" src="media/img/gallary/5.jpg">
+      <div class="content-details fadeIn-top fadeIn-left">
+        <h3>Silajit Majumder</h3>
+        <p>At our campus (Fest)</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <!-- <h3 class="title">Text fadeIn top right</h3> -->
+  <div class="content">
+    <a href="" target="_blank">
+      <div class="content-overlay"></div>
+      <img class="content-image" src="media/img/gallary/6.jpg">
+      <div class="content-details fadeIn-top fadeIn-right">
+        <h3>Tradational Dance form</h3>
+        <p>by our student</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <!-- <h3 class="title">Text fadeIn bottom left</h3> -->
+  <div class="content">
+    <a href="" target="_blank">
+      <div class="content-overlay"></div>
+      <img class="content-image" src="media/img/gallary/7.jpg">
+      <div class="content-details fadeIn-bottom fadeIn-left">
+        <h3>Parade March</h3>
+        <p>by our student</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+</div>
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+      <h3>Address</h3>
+      <h5>N.S Polytechnic College.</h5>
+      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i> Chandipur, PS. Ausgram, Dist.- Burdwan, Abhirampur, West Bengal 713144</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  03452 251 718</p>
+      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> admission@nspc.co.in</p>
+    </div>
+    <div class="w3-col m7">
+      <!-- <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank"> -->
+      <!-- <div class="w3-section">       -->
+        <!-- <label>Name</label> -->
+        <!-- <input class="w3-input" type="text" name="Name" required> -->
+      <!-- </div> -->
+      <!-- <div class="w3-section">       -->
+        <!-- <label>Email</label> -->
+        <!-- <input class="w3-input" type="text" name="Email" required> -->
+      <!-- </div> -->
+      <!-- <div class="w3-section">       -->
+        <!-- <label>Message</label> -->
+        <!-- <input class="w3-input" type="text" name="Message" required> -->
+      <!-- </div>   -->
+      <!-- <!-- <input class="w3-check" type="checkbox" checked name="Like"> --> 
+      <!-- <!-- <label>I Like it!</label> --> 
+      <!-- <button type="submit" class="w3-button w3-right w3-theme">Send</button> -->
+      <!-- </form> -->
+	  
+	  
+	  
+	  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc3lfPAs8ZAK2yjiTdgKlpqMfHI-F7njmlcvkXrGaw_ds9viQ/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Placement Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="placement"  >
+  <div class="w3-row">
+  <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+		
+          <p class="w3-xlarge" >On Campus Recruting Companies &nbsp;&nbsp;&nbsp;   </p>
+		        </li>
+</ul>
+		
+    <div id="flex-container"  class="w3-ul w3-border w3-hover-shadow flex-container">
+     <div class="gallery">
+  <a target="_blank" href="infrast.jpg">
+    <img src="media\img\campasing\1.png" alt="Cinque Terre" width="100" height="100">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="infrast.jpg">
+    <img src="media\img\campasing\2.jpg" alt="Forest" width="100" height="100">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="infrast.jpg">
+    <img src="media\img\campasing\3.jpg" alt="Northern Lights" width="100" height="100">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="infrast.jpg">
+    <img src="media\img\campasing\4.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="media\img\campasing\5.png">
+    <img src="media\img\campasing\5.png" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="media\img\campasing\6.png">
+    <img src="media\img\campasing\6.png" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+
+
+
+
+</div>
+  
+
+  
+  
+    <div id="flex-container"  class="w3-ul w3-border w3-hover-shadow flex-container">
+	
+	  <div class="gallery">
+  <a target="_blank" href="media\img\campasing\7.png">
+    <img src="media\img\campasing\7.jpeg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="media\img\campasing\8.jpg">
+    <img src="media\img\campasing\8.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="media\img\campasing\9.png">
+    <img src="media\img\campasing\9.png" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="media\img\campasing\10.png">
+    <img src="media\img\campasing\10.png" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+	
+	
+<div class="gallery">
+  <a target="_blank" href="media\img\campasing\11.png">
+    <img src="media\img\campasing\11.png" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="media\img\campasing\12.png">
+    <img src="media\img\campasing\12.png" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc" style="color:black">Add a description of the image here</div>
+</div>
+</div>
+  
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<!-- <img src="student.jpeg" class="w3-image w3-greyscale-min" style="width:100%;"> -->
+  <video  muted loop autoplay id="myVideo" alt="boat" style="width:100%;min-height:350px;">
+    <source src="C:\Users\Satyajit\Desktop\videos of ns\NScover.mp4" type="video/mp4">
+  </video>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+  <h4>Follow Us</h4>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Powered by N.S Polytechnic</a></p>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+<script>
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+<script>
+var video = document.getElementById('myVideo');
+document.getElementById("myVideo").volume=1;
+
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  document.getElementById("myButton").style.display = "none";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+   document.getElementById("myButton").style.display = "block";
+}
+
+</script>
+
+<script>
+function postToGoogle() {
+                var field1 = $("#nameField").val();
+                var field2 = $("#emailField").val();
+                var field3 = $("#mobField").val();
+                var field4 = $("#cinema option:selected").text();
+ 				
+				if(field1 == ""){
+					alert('Please Fill Your Name');
+					document.getElementById("nameField").focus();
+					return false;
+				}
+				if(field2 == ""){
+					alert('Please Fill Your Email');
+					document.getElementById("emailField").focus();
+					return false;
+				}
+				if(field3 == "" || field3.length > 10 || field3.length < 10){
+					alert('Please Fill Your Mobile Number');
+					document.getElementById("mobField").focus();
+					return false;
+				}
+
+
+				
+	
+                $.ajax({
+                    url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSca-39jDmimpQ9HhHreq7GSsCvZBQH9Tw3VngK9JWCMi0wREQ/formResponse?",
+						data: {"entry.654923010": field1, "entry.432187410": field2, "entry.871270343": field3},
+                    type: "POST",
+                    dataType: "xml",
+                    success: function(d)
+					{
+					},
+					error: function(x, y, z)
+						{
+
+							$('#success-msg').show();
+							$('#form').hide();
+							
+						}
+                });
+				return false;
+            }
+</script>
+
+
+<style>
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+</style>
+</body>
+</html>
